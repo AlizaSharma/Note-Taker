@@ -15,6 +15,6 @@ See example below of expected outcome:
 ![Note Taker Expected Outcome](./assets/11-express-homework-demo-01.png)
 
 ## Questions 
-If questions arise on the project, please contact alize.sharma12@gmail.com. 
+If questions arise on the project, please contact aliza.sharma12@gmail.com. 
 
 
