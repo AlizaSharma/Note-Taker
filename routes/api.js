@@ -10,12 +10,26 @@ router.get('/notes', (req, res) => {
     });       
     res.json(notes)
     
-}) 
+}); 
+
+router.delete('/:api_id', (req, res) => {
+  const apiId = req.params.api_id;
+  readFromFile('./db/db.json')
+    .then((data) => JSON.parse(data))
+    .then((json) => {
+    
+      const result = json.filter((note) => note.api_id !== apiId);
+
+      writeToFile('./db/db.json', result);
+
+      res.json(`Item ${apiId} has been deleted 🗑️`);
+    });
+});
 
 router.post('/notes', (req, res) => {
     const { title, text } = req.body;
 
-if (title && text){
+if (req.body){
     const newNote = {
         title, 
         text,
